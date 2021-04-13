@@ -11,13 +11,32 @@
 
     <link href="index.css" rel="stylesheet">
 
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
 </head>
 
 <body>
-    <div id="app">
-        <h1 v-if="seen">Now you see me</h1>
+    <div id="bind-attribute" class="demo">
+        <span v-bind:title="message">
+          Hover your mouse over me for a few seconds to see my dynamically bound
+          title!
+        </span>
     </div>
+    
+
+    <div id="app02">
+        <input type="checkbox" :checked="number == 5">
+        <p :class="" :style="styleObject"> apple</p>
+    </div>
+
+    <div id="app03">
+        <button @click="add">add 1</button>
+        <p :class="fontColor">the button above has been clicked {{counter}} times</p>
+    </div>
+
+    <div id="inline-handler">
+        <button @click="say('hi')">Say hi</button>
+        <button @click="say('what')">Say what</button>
+      </div>
     
     <script src="index.js"></script>
 </body>
